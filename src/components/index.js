@@ -1,0 +1,11 @@
+export { default as TelaInicial } from "./TelaInicial/TelaInicial";
+export { default as Tutorial } from "./Tutorial/Tutorial";
+export { default as TelaDificuldade } from "./TelaDificuldade/TelaDificuldade";
+export { default as Tabuleiro } from "./Tabuleiro/Tabuleiro";
+export { default as TelaAdm } from "./TelaAdm/TelaAdm";
+export { default as Modal } from "./Modal/Modal";
+export { default as Ranking } from "./Ranking/Ranking";
+export { default as ExcluirCarta } from "./ExcluirCarta/ExcluirCarta";
+export { default as CriarCarta } from "./CriarCarta/CriarCarta";
+export { default as EditarCarta } from "./EditarCarta/EditarCarta";
+export { default as ModalEditar } from "./ModalEditar/ModalEditar";
