@@ -17,6 +17,7 @@ const EditCarta = () => {
       .then(response => {
         setBackCartas(response.data);
         //setLoad(true);
+        console.log(backCartas);
       })
       .catch(error => console.log(error));
   }, []);
