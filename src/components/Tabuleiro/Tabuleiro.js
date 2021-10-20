@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import api from "../../services/api.js";
 
 import CartaBack from "./carta-back.png";
 
@@ -95,7 +96,7 @@ const Tabuleiro = ({ opcoes }) => {
   };
 
   useEffect(() => {
-    axios
+    api
       .get("/cartas")
       .then(response => {
         setCartasDoBack(response.data);

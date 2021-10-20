@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import api from "../../services/api.js";
 
 import { RankingDiv, BtnDiv, Display } from "./Ranking.elements";
 
@@ -9,7 +10,7 @@ const Ranking = () => {
   const [mostrarDificuldade, setMostrarDificuldade] = useState("facil");
 
   useEffect(() => {
-    axios
+    api
       .get("/users")
       .then(response => {
         setUsuarios(

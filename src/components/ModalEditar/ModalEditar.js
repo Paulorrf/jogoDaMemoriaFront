@@ -30,19 +30,15 @@ const ModalEditar = ({ setModalShow, showModal, backCartas, cartaID }) => {
   };
 
   const handleClick = e => {
-    e.preventDefault();
-
-    const formData = new FormData();
-
-    formData.append("nome", editNome);
-    //formData.append("cartaImage", editFile);
-
-    console.log(cartaID);
-
-    axios
-      .put(`/cartas/update/${cartaID}`, formData)
-      .then(res => console.log(res.data))
-      .catch(error => console.log(error));
+    // e.preventDefault();
+    // const formData = new FormData();
+    // formData.append("nome", editNome);
+    // //formData.append("cartaImage", editFile);
+    // console.log(cartaID);
+    // axios
+    //   .put(`/cartas/update/${cartaID}`, formData)
+    //   .then(res => console.log(res.data))
+    //   .catch(error => console.log(error));
   };
 
   const closeModal = e => {

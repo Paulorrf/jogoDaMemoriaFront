@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDom from "react-dom";
 import axios from "axios";
+import api from "../../services/api.js";
 
 import {
   Background,
@@ -55,7 +56,7 @@ const Modal = ({
       dificuldade: dificul,
     };
 
-    axios
+    api
       .post("/users/addUser", user)
       .then(res => {
         console.log(res.data);

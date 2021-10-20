@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import api from "../../services/api.js";
 
 import { ContainerDiv, Div, FormDiv, Sucesso } from "./CriarCarta.elements";
 
@@ -22,7 +23,7 @@ const CriarCarta = () => {
 
     setNome("");
 
-    axios
+    api
       .post("/cartas/add", formData)
       .then(res => {
         console.log(res.data);
