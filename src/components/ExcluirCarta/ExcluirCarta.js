@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import api from "../../services/api.js";
+
 import { ModalEditar } from "../index";
 
 import { OuterDiv, Div, Aviso } from "./ExcluirCarta.elements";
@@ -12,7 +14,7 @@ const EditCarta = () => {
   //const [load, setLoad] = useState(false);
 
   useEffect(() => {
-    axios
+    api
       .get("/cartas")
       .then(response => {
         setBackCartas(response.data);
