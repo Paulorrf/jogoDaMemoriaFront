@@ -29,7 +29,7 @@ export const TutorialDiv = styled.div`
 
   p {
     padding-bottom: 20px;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 `;
 

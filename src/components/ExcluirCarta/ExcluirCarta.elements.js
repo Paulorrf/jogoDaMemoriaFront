@@ -6,6 +6,8 @@ export const Aviso = styled.div`
   left: 50%;
   transform: translateX(-50%);
   color: red;
+  width: 100%;
+  text-align: center;
 `;
 
 export const OuterDiv = styled.div`
@@ -38,4 +40,8 @@ export const Excluir = styled.div`
   margin-bottom: 10px;
   margin-left: 2px;
   color: #fff;
+
+  :hover {
+    background-color: ${props => props.bg};
+  }
 `;

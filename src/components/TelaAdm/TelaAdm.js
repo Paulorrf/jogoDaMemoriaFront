@@ -9,8 +9,7 @@ const TelaAdm = () => {
       <h2>Tela Admin</h2>
       <BtnDiv>
         <Link to="/criar">Criar</Link>
-        <Link to="/editar">Editar</Link>
-        <Link to="/excluir">Excluir</Link>
+        <Link to="/excluir">Editar/Excluir</Link>
       </BtnDiv>
     </AdmDiv>
   );

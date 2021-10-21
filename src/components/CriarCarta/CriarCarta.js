@@ -36,7 +36,7 @@ const CriarCarta = () => {
   return (
     <ContainerDiv>
       <Div>
-        <h2>Criar Carta</h2>
+        <h2>Criar Carta(BUGOU)</h2>
         <Sucesso>{sucesso}</Sucesso>
         <FormDiv>
           <form encType="multipart/form-data" onSubmit={handleClick}>

@@ -16,8 +16,9 @@ const Tutorial = () => {
           e 30 segundos para adivinhar os pares.
         </p>
         <p>
-          Na fase bônus serão 8 pares em todas as dificuldade e você terá que
-          adivinhar os pares com base no som dentro de 45 segundos.
+          A fase bônus ocorre a cada 3 fases normais e possui 8 pares em todas
+          as dificuldade e você terá que adivinhar os pares com base no som
+          dentro de 45 segundos.
         </p>
 
         <BtnDiv>

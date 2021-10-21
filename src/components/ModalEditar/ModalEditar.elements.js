@@ -21,6 +21,11 @@ export const OuterModal = styled.div`
   padding: 6px 0px;
   background: #fff;
   position: relative;
+  text-align: center;
+
+  > * {
+    padding: 10px;
+  }
 `;
 
 export const FormDiv = styled.div`
@@ -117,6 +122,27 @@ export const ZerouDiv = styled.div`
 
     :hover {
       background-color: red;
+    }
+  }
+`;
+
+export const LabelDiv = styled.div`
+  padding: 20px 0;
+
+  button {
+    width: 6rem;
+    height: 2rem;
+    margin-top: 20px;
+    background-color: ${props => props.theme.colors.secondary};
+    border-radius: 0.5rem;
+    border-color: transparent;
+    color: #000;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    :hover {
+      background-color: ${props => props.theme.colors.primary};
+      color: #fff;
     }
   }
 `;

@@ -21,7 +21,6 @@ const EditCarta = () => {
     "porco",
     "tigre",
   ]);
-  //const [load, setLoad] = useState(false);
 
   useEffect(() => {
     api
@@ -34,12 +33,15 @@ const EditCarta = () => {
       .catch(error => console.log(error));
   }, []);
 
-  const handleDelete = (id, nameCarta) => {
-    if (naoExcluir.includes(nameCarta)) {
+  const handleDelete = (id, nome) => {
+    //console.log(backCartas.length);
+    if (naoExcluir.includes(nome)) {
+      alert("Essa carta nao pode ser excluida por causa do diferencial.");
       return;
     } else if (backCartas.length > 18) {
       //axios.delete(`/cartas/${id}`);
       console.log("excluiu carta");
+      window.location.reload(false);
     }
   };
 
@@ -49,8 +51,6 @@ const EditCarta = () => {
   };
 
   console.log(backCartas);
-
-  // <Div onClick={() => handleExcluir(carta._id)}>
   return (
     <>
       <ModalEditar
@@ -60,7 +60,10 @@ const EditCarta = () => {
         cartaID={cartaID}
       />
       <Aviso>
-        <h3>Clique na carta para excluir</h3>
+        <h3>
+          Clique na carta para excluir(algumas cartas não podem ser excluidas
+          por causa do diferencial)
+        </h3>
       </Aviso>
       <OuterDiv>
         {backCartas?.map(carta => {
@@ -68,12 +71,17 @@ const EditCarta = () => {
             <Div key={carta._id}>
               <img src={`../../uploads/${carta.imagem}`} alt={carta.nome} />
               <div>
-                <Excluir color="red" onClick={() => handleDelete(carta._id)}>
+                <Excluir
+                  bg="darkred"
+                  color="#e63946"
+                  onClick={() => handleDelete(carta._id, carta.nome)}
+                >
                   Excluir
                 </Excluir>
                 <Excluir
-                  color="blue"
-                  onClick={() => handleModal(carta._id, carta.nome)}
+                  bg="blue"
+                  color="#219ebc"
+                  onClick={() => handleModal(carta._id)}
                 >
                   Editar
                 </Excluir>

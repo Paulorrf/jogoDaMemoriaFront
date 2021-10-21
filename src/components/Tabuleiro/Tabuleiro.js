@@ -158,7 +158,7 @@ const Tabuleiro = ({ opcoes }) => {
   }, [acertou, gameOver]);
 
   useEffect(() => {
-    if (fases === 2) {
+    if (fases === 4) {
       setDifArrTemp(embaralhar(8, diferencialArr));
       setDiferencial(true);
       setFases(1);
@@ -192,6 +192,7 @@ const Tabuleiro = ({ opcoes }) => {
         clearedCards.length === difArrTemp.length / 2 &&
         carregou
       ) {
+        setTimer(opcoes.tempo);
         setDiferencial(false);
         setAcertou(true);
         clearInterval(interval.current);
@@ -242,6 +243,9 @@ const Tabuleiro = ({ opcoes }) => {
 
   //Pausa o relogio
   function handleDesistir() {
+    if (pontuacao === 0 && maiorPontuacao === 0) {
+      setPontuacaoZerou(true);
+    }
     setGameOver(true);
     clearInterval(interval.current);
     setShowModal(prev => !prev);

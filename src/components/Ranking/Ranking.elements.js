@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const RankingDiv = styled.div`
   width: 600px;
-  height: 400px;
+  height: auto;
+  min-height: 400px;
   background-color: ${props => props.theme.colors.secondary};
   position: absolute;
   top: 50%;

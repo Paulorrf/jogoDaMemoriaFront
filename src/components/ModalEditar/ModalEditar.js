@@ -8,6 +8,7 @@ import {
   FormDiv,
   BtnCancelDiv,
   ZerouDiv,
+  LabelDiv,
 } from "./ModalEditar.elements";
 import { useHistory } from "react-router";
 
@@ -53,6 +54,7 @@ const ModalEditar = ({ setModalShow, showModal, backCartas, cartaID }) => {
     <div>
       <Background onClick={closeModal} ref={modalRef}>
         <OuterModal>
+          <h3 style={{ color: "red" }}>Não está funcionando</h3>
           {cartaID ? (
             <div>
               <form encType="multipart/form-data" onSubmit={handleClick}>
@@ -67,15 +69,17 @@ const ModalEditar = ({ setModalShow, showModal, backCartas, cartaID }) => {
                 />
                 <br />
 
-                <label htmlFor="file">Choose imagem</label>
-                <input
-                  type="file"
-                  filename="cartaImage"
-                  onChange={e => onChangeFile(e)}
-                />
+                <LabelDiv>
+                  <label htmlFor="file">Choose imagem</label>
+                  <input
+                    type="file"
+                    filename="cartaImage"
+                    onChange={e => onChangeFile(e)}
+                  />
 
-                <br />
-                <button type="submit">Criar</button>
+                  <br />
+                  <button type="submit">Editar</button>
+                </LabelDiv>
               </form>
             </div>
           ) : null}
