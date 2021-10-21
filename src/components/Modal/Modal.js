@@ -91,6 +91,7 @@ const Modal = ({
                     name="nome"
                     value={userName}
                     placeholder="nome"
+                    maxlength="16"
                     onChange={e => setUserName(e.target.value)}
                   />
 

@@ -29,13 +29,14 @@ export const TutorialDiv = styled.div`
 
   p {
     padding-bottom: 20px;
-    font-size: 1.6rem;
+    font-size: 1rem;
+    font-weight: 600;
   }
 `;
 
 export const BtnDiv = styled.div`
   position: absolute;
-  bottom: -14%;
+  bottom: -20%;
   left: 50%;
   transform: translateX(-50%);
 

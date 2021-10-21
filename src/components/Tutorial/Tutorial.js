@@ -20,6 +20,24 @@ const Tutorial = () => {
           as dificuldade e você terá que adivinhar os pares com base no som
           dentro de 45 segundos.
         </p>
+        <h3>Pontuação</h3>
+        <p>
+          Facil: ganha 20 pontos após acertar tudo e perde 5 pontos para cada
+          par não acertado.
+        </p>
+        <p>
+          Médio: ganha 40 pontos após acertar tudo e perde 10 pontos para cada
+          par não acertado.
+        </p>
+        <p>
+          Dificil: ganha 150 pontos após acertar tudo e perde 20 pontos para
+          cada par não acertado.
+        </p>
+        <p>
+          Após a pontuação chegar em zero ou o jogador apertar no botão de
+          desistir, o jogo acaba e se a maior pontuação obtida através da
+          partida for maior que zero o jogador poderá se cadastrar no ranking.
+        </p>
 
         <BtnDiv>
           <Link to="/">
