@@ -29,3 +29,13 @@ export const Div = styled.div`
     height: 100px;
   }
 `;
+
+export const Excluir = styled.div`
+  width: 80px;
+  background-color: ${props => props.color};
+  padding: 2px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  color: #fff;
+`;

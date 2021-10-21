@@ -5,12 +5,22 @@ import api from "../../services/api.js";
 
 import { ModalEditar } from "../index";
 
-import { OuterDiv, Div, Aviso } from "./ExcluirCarta.elements";
+import { OuterDiv, Div, Aviso, Excluir } from "./ExcluirCarta.elements";
 
 const EditCarta = () => {
   const [backCartas, setBackCartas] = useState([]);
   const [modalShow, setModalShow] = useState(false);
   const [cartaID, setCartaID] = useState();
+  const [naoExcluir, setNaoExcluir] = useState([
+    "cabra",
+    "cavalo",
+    "coruja",
+    "elefante",
+    "galinha",
+    "pantera",
+    "porco",
+    "tigre",
+  ]);
   //const [load, setLoad] = useState(false);
 
   useEffect(() => {
@@ -24,10 +34,16 @@ const EditCarta = () => {
       .catch(error => console.log(error));
   }, []);
 
+  const handleDelete = (id, nameCarta) => {
+    if (naoExcluir.includes(nameCarta)) {
+      return;
+    } else if (backCartas.length > 18) {
+      //axios.delete(`/cartas/${id}`);
+      console.log("excluiu carta");
+    }
+  };
+
   const handleModal = cardID => {
-    //console.log(id);
-    axios.delete(`/cartas/${cardID}`);
-    // console.log("deletou");
     setModalShow(true);
     setCartaID(cardID);
   };
@@ -52,8 +68,15 @@ const EditCarta = () => {
             <Div key={carta._id}>
               <img src={`../../uploads/${carta.imagem}`} alt={carta.nome} />
               <div>
-                <div>Excluir</div>
-                <div onClick={() => handleModal(carta._id)}>Editar</div>
+                <Excluir color="red" onClick={() => handleDelete(carta._id)}>
+                  Excluir
+                </Excluir>
+                <Excluir
+                  color="blue"
+                  onClick={() => handleModal(carta._id, carta.nome)}
+                >
+                  Editar
+                </Excluir>
               </div>
             </Div>
           );
