@@ -39,7 +39,7 @@ const EditCarta = () => {
       alert("Essa carta nao pode ser excluida por causa do diferencial.");
       return;
     } else if (backCartas.length > 18) {
-      axios.delete(`/cartas/${id}`);
+      //axios.delete(`/cartas/${id}`);
       console.log("excluiu carta");
       window.location.reload(false);
     } else {
