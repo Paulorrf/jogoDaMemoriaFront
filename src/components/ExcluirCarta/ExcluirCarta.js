@@ -26,7 +26,7 @@ const EditCarta = () => {
 
   const handleModal = cardID => {
     //console.log(id);
-    // axios.delete(`/cartas/${id}`);
+    axios.delete(`/cartas/${cardID}`);
     // console.log("deletou");
     setModalShow(true);
     setCartaID(cardID);
