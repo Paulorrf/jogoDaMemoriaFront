@@ -37,8 +37,10 @@ const EditCarta = () => {
       alert("Essa carta nao pode ser excluida por causa do diferencial.");
       return;
     } else if (backCartas.length > 18) {
-      axios.delete(`/cartas/${id}`);
-      console.log("excluiu carta");
+      //axios.delete(`/cartas/${id}`);
+      api.delete(`/cartas/${id}`);
+      //console.log("excluiu carta");
+      //console.log(id);
       window.location.reload(false);
     } else {
       alert("O jogo precisa ter pelo menos 18 cartas.");
