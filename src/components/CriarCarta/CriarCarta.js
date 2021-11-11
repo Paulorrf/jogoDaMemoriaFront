@@ -16,10 +16,15 @@ const CriarCarta = () => {
   const handleClick = e => {
     e.preventDefault();
 
-    const formData = new FormData();
+    let formData = new FormData();
 
     formData.append("nome", nome);
     formData.append("cartaImage", fileName);
+
+    // const cartaData = {
+    //   nome,
+    //   imagem: fileName,
+    // };
 
     setNome("");
 
@@ -32,6 +37,8 @@ const CriarCarta = () => {
       })
       .catch(error => console.log(error));
   };
+
+  console.log(fileName);
 
   return (
     <ContainerDiv>

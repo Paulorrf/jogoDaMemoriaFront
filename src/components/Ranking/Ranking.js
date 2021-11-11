@@ -10,6 +10,8 @@ const Ranking = () => {
   const [mostrarDificuldade, setMostrarDificuldade] = useState("facil");
 
   useEffect(() => {
+    //Bug de aparecer em ordem aleatoria no ranking(arrumado)
+    setLoading(true);
     api
       .get("/users")
       .then(response => {

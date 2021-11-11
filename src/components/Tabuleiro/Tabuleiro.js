@@ -88,10 +88,13 @@ const Tabuleiro = ({ opcoes }) => {
   const handleClick = (index, e) => {
     setOpenCards(prev => [...prev, index]);
 
+    //console.log(e);
+
     //Arrumar bug do double click
     if (e.detail === 1) {
-      setIsClicked(false);
-      setTimeout(() => setIsClicked(true), 100);
+      //setIsClicked(false);
+      //console.log("entrou detail");
+      //setTimeout(() => setIsClicked(true), 200);
     }
   };
 
@@ -316,6 +319,7 @@ const Tabuleiro = ({ opcoes }) => {
           ) : carregou ? (
             cartas.map((carta, index) => {
               let virarCarta;
+              let clicou = true;
               virarCarta = false;
 
               //Verifica se a carta clicada está no array
@@ -324,14 +328,22 @@ const Tabuleiro = ({ opcoes }) => {
               //Deixa a carta que foi achado o par virada para cima
               if (clearedCards.includes(carta.nome)) virarCarta = true;
 
+              if (openCards.includes(index)) {
+                //setIsClicked(false);
+                clicou = false;
+              }
+
               return (
                 <CardsDiv
                   key={index}
-                  onClick={isClicked ? e => handleClick(index, e) : null}
+                  onClick={clicou ? e => handleClick(index, e) : null}
                 >
                   {virarCarta ? (
                     <ImgDiv>
-                      <img src={`../../uploads/${carta.imagem}`} alt="eaea" />
+                      <img
+                        src={`../../uploads/${carta.imagem}`}
+                        alt="imagem animal"
+                      />
                     </ImgDiv>
                   ) : (
                     <ImgDiv>

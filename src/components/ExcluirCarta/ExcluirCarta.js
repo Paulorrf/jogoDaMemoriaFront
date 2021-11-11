@@ -27,19 +27,17 @@ const EditCarta = () => {
       .get("/cartas")
       .then(response => {
         setBackCartas(response.data);
-        //setLoad(true);
         console.log(backCartas);
       })
       .catch(error => console.log(error));
   }, []);
 
   const handleDelete = (id, nome) => {
-    //console.log(backCartas.length);
     if (naoExcluir.includes(nome)) {
       alert("Essa carta nao pode ser excluida por causa do diferencial.");
       return;
     } else if (backCartas.length > 18) {
-      //axios.delete(`/cartas/${id}`);
+      axios.delete(`/cartas/${id}`);
       console.log("excluiu carta");
       window.location.reload(false);
     } else {
